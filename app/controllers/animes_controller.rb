@@ -50,6 +50,7 @@ class AnimesController < ApplicationController
 
   private
 
+
   def set_blog
     @anime = Anime.find(params[:id])
   end

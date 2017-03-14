@@ -5,7 +5,7 @@
 
 <% @animes.each do |anime| %>
 
-  <p><%= anime.title %></p>
+  <p><%= link_to anime.title, anime_path(anime) %></p>
   <p><%= anime.subtitle %></p>
   <p><%= anime.body %></p>
   <p><%= image_tag anime.thumb_image unless anime.thumb_image.nil? %></p>
@@ -14,5 +14,7 @@
   <%= link_to "Delete", anime, method: :delete %>
 
 <% end %>
+
+<%= link_to "Home Page", root_path %>
 
   
