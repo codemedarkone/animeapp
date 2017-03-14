@@ -1,5 +1,5 @@
 class AnimesController < ApplicationController
-  before_action :set_blog, only: [:show, :edit, :update, :destroy]
+  before_action :set_anime, only: [:show, :edit, :update, :destroy, :toggle_status]
 
 
   def index
@@ -19,7 +19,7 @@ class AnimesController < ApplicationController
   end
 
   def create
-    @anime = Anime.new(blog_params)
+    @anime = Anime.new(anime_params)
 
     if @anime.save
       redirect_to @anime
@@ -29,7 +29,7 @@ class AnimesController < ApplicationController
   end
 
   def update
-    if @anime.update(blog_params)
+    if @anime.update(anime_params)
       redirect_to @anime
     else
       render :edit
@@ -42,20 +42,28 @@ class AnimesController < ApplicationController
       redirect_to animes_path
     else
       render @blog
-
     end
 
+  end
+
+  def toggle_status
+    if @anime.draft?
+      @anime.published!
+    elsif @anime.published?
+      @anime.draft!
+    end
+   redirect_to animes_path
   end
 
 
   private
 
 
-  def set_blog
+  def set_anime
     @anime = Anime.friendly.find(params[:id])
   end
 
-  def blog_params
+  def anime_params
     params.require(:anime).permit(:title, :subtitle, :body)
   end
 end

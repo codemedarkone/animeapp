@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
-  resources :animes
+  resources :animes do
+    member do
+      get :toggle_status 
+    end
+  end
+
   resources :blogs
 
   get 'about-me', to: 'pages#about'
