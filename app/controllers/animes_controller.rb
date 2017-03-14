@@ -52,7 +52,7 @@ class AnimesController < ApplicationController
 
 
   def set_blog
-    @anime = Anime.find(params[:id])
+    @anime = Anime.friendly.find(params[:id])
   end
 
   def blog_params
