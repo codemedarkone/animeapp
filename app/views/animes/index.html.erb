@@ -1,11 +1,18 @@
 <h1>Animes</h1>
 
 
+<%= link_to "Create New Anime Post", new_anime_path %>
+
 <% @animes.each do |anime| %>
 
   <p><%= anime.title %></p>
   <p><%= anime.subtitle %></p>
   <p><%= anime.body %></p>
-  <p><%= image_tag anime.thumb_image %></p>
+  <p><%= image_tag anime.thumb_image unless anime.thumb_image.nil? %></p>
+  <%= link_to "Show", anime %>
+  <%= link_to "Edit", edit_anime_path(anime) %>
+  <%= link_to "Delete", anime, method: :delete %>
 
 <% end %>
+
+  

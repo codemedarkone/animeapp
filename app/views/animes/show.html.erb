@@ -1,0 +1,21 @@
+<h1>Show Anime Page after creating or updating</h1>
+
+<p>
+<strong>Title:</strong>
+ <%= @anime.title %>
+</p>
+
+<p>
+<strong>Subtitle:</strong>
+ <%= @anime.subtitle %>
+</p>
+
+<p>
+<strong>Body:</strong>
+ <%= @anime.body %>
+</p>
+
+<%= link_to "Back to Edit", edit_anime_path(@anime) %>
+<%= link_to "Back", animes_path %>
+
+<p><%= link_to "Back to Animes", animes_path %></p>
