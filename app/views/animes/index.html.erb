@@ -1,0 +1,11 @@
+<h1>Animes</h1>
+
+
+<% @animes.each do |anime| %>
+
+  <p><%= anime.title %></p>
+  <p><%= anime.subtitle %></p>
+  <p><%= anime.body %></p>
+  <p><%= image_tag anime.thumb_image %></p>
+
+<% end %>
