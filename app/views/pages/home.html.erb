@@ -1,4 +1,4 @@
-<h1> Hi, <%= current_user.first_name if current_user %>
+<h1> Hi, <%= current_user.first_name %>
 
 <h1>Home Page</h1>
 
@@ -13,3 +13,5 @@
  </p>
 
 <%= link_to "Animes", animes_path %>
+
+<p><%= current_user.class %></p>
