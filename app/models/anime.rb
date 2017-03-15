@@ -1,4 +1,5 @@
 class Anime < ApplicationRecord
+  has_many :technologies
   include Placeholder
   validates_presence_of :title, :body, :main_image, :thumb_image
   enum status: { draft: 0, published: 1 }
