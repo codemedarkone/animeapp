@@ -1,13 +1,15 @@
+<h1> Hi, <%= current_user.first_name if current_user %>
+
 <h1>Home Page</h1>
 
 <h2>anime</h2>
  <p>
-  <%= Anime.inspect %>
+  <%= @animes.inspect %>
  </p>
 
  <h2>Skills</h2>
  <p>
-  <%= Skill.inspect %>
+  <%= @skills.inspect %>
  </p>
 
 <%= link_to "Animes", animes_path %>
