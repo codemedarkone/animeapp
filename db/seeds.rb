@@ -1,3 +1,12 @@
+5.times do |skill|
+  Skill.create!(
+    title: "Anime #{skill}",
+    percent_utilized: 15
+  )
+end
+
+puts "5 skills created"
+
 3.times do |topic|
   Topic.create!(
     title: "#{topic}"
@@ -15,6 +24,8 @@
   )
 end
 
+puts "9 Animes created"
+
 
 3.times do |anime_item|
   Anime.create!(
@@ -26,3 +37,11 @@ end
     topic_id: Topic.last.id
   )
 end
+
+3.times do |technology|
+  Anime.last.technologies.create!(
+    name: "Technology #{technology}"
+    )
+  end
+
+  puts "3 technologies created"
