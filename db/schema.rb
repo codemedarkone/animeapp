@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170315003405) do
+ActiveRecord::Schema.define(version: 20170315020507) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,6 +47,14 @@ ActiveRecord::Schema.define(version: 20170315003405) do
     t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type", using: :btree
     t.index ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id", using: :btree
     t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
+  end
+
+  create_table "skills", force: :cascade do |t|
+    t.string   "title"
+    t.integer  "percent_utilized"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.text     "badge"
   end
 
   create_table "topics", force: :cascade do |t|
