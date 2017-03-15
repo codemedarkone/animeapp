@@ -5,7 +5,9 @@ class Anime < ApplicationRecord
 
   include Placeholder
   validates_presence_of :title, :body, :main_image, :thumb_image
+
   enum status: { draft: 0, published: 1 }
+
   extend FriendlyId
   friendly_id :title, use: :slugged
 

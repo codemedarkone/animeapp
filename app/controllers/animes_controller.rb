@@ -4,6 +4,7 @@ class AnimesController < ApplicationController
 
   def index
     @animes = Anime.all
+    @skills = Skill.all
   end
 
   def actionanime
