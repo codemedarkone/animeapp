@@ -10,7 +10,6 @@
   <p><%= anime.body %></p>
   <p><%= image_tag anime.thumb_image unless anime.thumb_image.nil? %></p>
   <%= link_to anime.status, toggle_status_anime_path(anime) %>
-  <%= link_to "Show", anime %>
   <%= link_to "Edit", edit_anime_path(anime) %>
   <%= link_to "Delete", anime, method: :delete %>
 

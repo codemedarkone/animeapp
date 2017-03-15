@@ -3,7 +3,6 @@ class AnimesController < ApplicationController
 
 
   def index
-  
     @animes = Anime.all
   end
 
@@ -13,6 +12,8 @@ class AnimesController < ApplicationController
 
   def new
     @anime = Anime.new
+    3.times { @anime.technologies.build }
+
   end
 
   def show
@@ -46,7 +47,7 @@ class AnimesController < ApplicationController
     if @anime.destroy
       redirect_to animes_path
     else
-      render @blog
+      render @anime
     end
 
   end
@@ -69,6 +70,6 @@ class AnimesController < ApplicationController
   end
 
   def anime_params
-    params.require(:anime).permit(:title, :subtitle, :body)
+     params.require(:anime).permit(:title, :subtitle, :body, technologies_attributes: [:name])
   end
 end
