@@ -3,7 +3,12 @@ class AnimesController < ApplicationController
 
 
   def index
+  
     @animes = Anime.all
+  end
+
+  def actionanime
+    @actionanime = Anime.action_anime
   end
 
   def new

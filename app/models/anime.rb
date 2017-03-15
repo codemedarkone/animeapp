@@ -7,4 +7,10 @@ class Anime < ApplicationRecord
 
   belongs_to :topic
 
+  def self.actionanime
+     where(subtitle: "Action Anime")
+  end
+
+  scope :action_anime, -> { where(subtitle: "Action Anime") }
+
 end

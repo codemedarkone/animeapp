@@ -5,6 +5,8 @@ Rails.application.routes.draw do
     end
   end
 
+  get 'action-animes', to: 'animes#actionanime'
+
   resources :blogs
 
   get 'about-me', to: 'pages#about'
