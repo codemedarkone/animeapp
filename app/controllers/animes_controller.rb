@@ -70,6 +70,10 @@ class AnimesController < ApplicationController
   end
 
   def anime_params
-     params.require(:anime).permit(:title, :subtitle, :body, technologies_attributes: [:name])
+     params.require(:anime).permit(:title, 
+                                    :subtitle, 
+                                    :body, 
+                                    technologies_attributes: [:name]
+                                    )
   end
 end
