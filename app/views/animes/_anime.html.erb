@@ -1,0 +1,10 @@
+  <p><%= link_to anime.title, anime_path(anime) %></p>
+
+  <p><%= anime.subtitle %></p>
+
+  <p><%= anime.body %></p>
+  
+  <%= image_tag anime.thumb_image unless anime.thumb_image.nil? %>
+  <%= link_to anime.status, toggle_status_anime_path(anime) %>
+  <%= link_to "Edit", edit_anime_path(anime) %>
+  <%= link_to "Delete", anime, method: :delete %>
