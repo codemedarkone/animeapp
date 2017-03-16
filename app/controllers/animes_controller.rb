@@ -4,6 +4,7 @@ class AnimesController < ApplicationController
 
   def index
     @animes = Anime.all
+    @page_title = "Anime To Watch"
   end
 
   def actionanime
@@ -17,7 +18,8 @@ class AnimesController < ApplicationController
   end
 
   def show
-
+    @page_title = @anime.title
+    @seo_keywords = @anime.body
   end
 
     def edit
