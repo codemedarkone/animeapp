@@ -1,6 +1,6 @@
 class AnimesController < ApplicationController
   before_action :set_anime, only: [:show, :edit, :update, :destroy, :toggle_status]
-
+  layout "anime"
 
   def index
     @animes = Anime.all

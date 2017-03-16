@@ -1,4 +1,6 @@
 class PagesController < ApplicationController
+  layout "page"
+
   def home
     @animes = Anime.all
     @skills = Skill.all
