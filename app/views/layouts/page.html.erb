@@ -14,7 +14,7 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
-    <%= render "shared/nav" %>
+    <%= render "shared/nav", location: 'top' %>
 
     <% if current_user.is_a?(GuestUser) %>
         <%= link_to "Register", new_user_registration_path %>

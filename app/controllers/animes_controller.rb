@@ -14,7 +14,6 @@ class AnimesController < ApplicationController
   def new
     @anime = Anime.new
     3.times { @anime.technologies.build }
-
   end
 
   def show
@@ -22,8 +21,8 @@ class AnimesController < ApplicationController
     @seo_keywords = @anime.body
   end
 
-    def edit
-
+  def edit
+    
   end
 
   def create
